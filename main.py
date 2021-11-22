@@ -11,7 +11,7 @@ xxx = Client(
                      session_name = ':memory:'
 )
 
-@xxx.on_message(filters.command("start"))
+@xxx.on_message(filters.command("start") & ~ filters.grouo)
 async def start(client: xxx, message: Message),
     await message.reply_text(f"""Hey **{message.from_user.first_name}**!
 
